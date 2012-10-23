@@ -1,0 +1,1 @@
+java -classpath lib\sas.core.jar;lib\sas.intrnet.javatools.jar;lib\sas.svc.connection.jar;lib\sas.security.sspi.jar;build data.SasIom

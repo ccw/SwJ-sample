@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Metadata>
+    <SoftwareComponent VendorIdentifier="" PublicType="" SoftwareVersion="" ProductName="" Platform="" ChangeState=""
+                       Id="$A54470IJ.$AI0000RU" ProductIdentifier="" ClassIdentifier="ABC1234567890" Major="0" Minor="0"
+                       UsageVersion="0.0" SpecVendor="" SpecVersion="" Desc="" LockedBy="" Name="Default Services"
+                       Vendor="">
+        <SoftwareTrees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </SoftwareTrees>
+    </SoftwareComponent>
+    <Tree PublicType="" ChangeState="" Id="$A54470IJ.$AJ0002BR" UsageVersion="0.0" Desc="" LockedBy=""
+          Name="Default Services Group" TreeType="">
+        <SoftwareComponents>
+            <SoftwareComponent ObjRef="$A54470IJ.$AI0000RU"/>
+        </SoftwareComponents>
+        <Members>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RU"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </Members>
+    </Tree>
+    <ServiceComponent VendorIdentifier="SAS" PublicType="" SoftwareVersion="" ProductName="" Platform="Java"
+                      ChangeState="" IsRemotelyAccessible="0" Id="$A54470IJ.$B30000RT" ProductIdentifier=""
+                      ClassIdentifier="ABC1212121212" Major="9" Minor="2" UsageVersion="0.0" IsLicensed="0"
+                      SpecVendor="" SpecVersion=""
+                      Desc="A SAS Foundation Service which provides a capability to obtain log messages." LockedBy=""
+                      FactoryClassName="com.sas.services.logging.LoggingServiceFactory" InstallationLocation=""
+                      Name="Logging Service" Vendor="SAS Institute">
+        <Trees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </Trees>
+        <UsedByComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RU"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </UsedByComponents>
+        <ServiceTypes>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BF"/>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BG"/>
+        </ServiceTypes>
+        <Properties>
+            <Property ObjRef="$A54470IJ.$AH0007OK"/>
+            <Property ObjRef="$A54470IJ.$AH0007OL"/>
+        </Properties>
+    </ServiceComponent>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BF" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Service interface common to all foundation services." LockedBy=""
+                 InterfaceName="com.sas.services.RemoteServiceInterface"
+                 Name="Foundation service type: base service interface">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+        </DeployedComponents>
+    </ServiceType>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BG" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Provides application logging support." LockedBy=""
+                 InterfaceName="com.sas.services.logging.LoggingServiceInterface"
+                 Name="Foundation service type: logging">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+        </DeployedComponents>
+    </ServiceType>
+    <Property DefaultValue="" IsVisible="1" IsRequired="1" PropertyName="INIT_DATA" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OK" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="1" Desc="" LockedBy="" Name="Foundation Service Initialization Data" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBH"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+        </AssociatedObject>
+        <StoredConfiguration>
+            <TextStore ObjRef="$A54470IJ.$AE0003GZ"/>
+        </StoredConfiguration>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBH" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OK"/>
+        </TypedProperties>
+    </PropertyType>
+    <TextStore TextType="" PublicType="" ChangeState="" Id="$A54470IJ.$AE0003GZ"
+               StoredText="&lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt; &lt;!DOCTYPE Logging&gt; &lt;LoggingService xmlns=&quot;urn:sas:LoggingService&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:sas:LoggingService com_sas_services_logging_LoggingService_9_2_0_0.xsd&quot; &gt; &lt;!-- LoggingContexts --&gt; &lt;RootLoggingContext  priority=&quot;INFO&quot;&gt;    &lt;OutputRef outputID=&quot;A1&quot;/&gt; &lt;/RootLoggingContext&gt; &lt;LoggingContext  name=&quot;com.sas&quot;  priority=&quot;INFO&quot;  chained=&quot;false&quot;&gt;    &lt;OutputRef outputID=&quot;A1&quot;/&gt; &lt;/LoggingContext&gt; &lt;LoggingContext  name=&quot;com.sas.services&quot;  priority=&quot;WARN&quot;  chained=&quot;false&quot;&gt;    &lt;OutputRef outputID=&quot;A1&quot;/&gt; &lt;/LoggingContext&gt; &lt;LoggingContext  name=&quot;com.sas.services.events.broker&quot;  priority=&quot;INFO&quot;  chained=&quot;false&quot;&gt;    &lt;OutputRef outputID=&quot;A1&quot;/&gt; &lt;/LoggingContext&gt; &lt;!-- Outputs --&gt; &lt;Output  id=&quot;A1&quot;  type=&quot;Console&quot;  layoutPattern=&quot;%d [%t] %-5p %c - %m%n&quot;&gt; &lt;/Output&gt; &lt;/LoggingService&gt;"
+               UsageVersion="0.0" TextRole="initialization" Desc="" LockedBy="" Name="Initialization Data">
+        <AssociatedProperty>
+            <Property ObjRef="$A54470IJ.$AH0007OK"/>
+        </AssociatedProperty>
+    </TextStore>
+    <Property DefaultValue="com.sas.console.plugins.services.logging.ServiceInitializationDataView" IsVisible="0"
+              IsRequired="1" PropertyName="ServiceInitializationDataView" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OL" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="0" Desc="" LockedBy="" Name="Initialization Data User Interface" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBI"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+        </AssociatedObject>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBI" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OL"/>
+        </TypedProperties>
+    </PropertyType>
+    <ServiceComponent VendorIdentifier="SAS" PublicType="" SoftwareVersion="" ProductName="" Platform="Java"
+                      ChangeState="" IsRemotelyAccessible="0" Id="$A54470IJ.$B30000RU" ProductIdentifier=""
+                      ClassIdentifier="ABC1212121212" Major="9" Minor="2" UsageVersion="0.0" IsLicensed="0"
+                      SpecVendor="" SpecVersion=""
+                      Desc="A SAS Foundation Service which provides a capability to execute SAS stored processes."
+                      LockedBy="" FactoryClassName="com.sas.services.storedprocess.StoredProcessServiceFactory"
+                      InstallationLocation="" Name="Stored Process Service" Vendor="SAS Institute">
+        <Trees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </Trees>
+        <UsingComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+        </UsingComponents>
+        <ServiceTypes>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BH"/>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BI"/>
+        </ServiceTypes>
+        <Properties>
+            <Property ObjRef="$A54470IJ.$AH0007OM"/>
+            <Property ObjRef="$A54470IJ.$AH0007ON"/>
+        </Properties>
+    </ServiceComponent>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BH" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Service interface common to all foundation services." LockedBy=""
+                 InterfaceName="com.sas.services.RemoteServiceInterface"
+                 Name="Foundation service type: base service interface">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RU"/>
+        </DeployedComponents>
+    </ServiceType>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BI" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Provides support to execute SAS stored processes." LockedBy=""
+                 InterfaceName="com.sas.services.storedprocess.StoredProcessServiceInterface"
+                 Name="Foundation service type: stored process">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RU"/>
+        </DeployedComponents>
+    </ServiceType>
+    <Property DefaultValue="" IsVisible="0" IsRequired="1" PropertyName="INIT_DATA" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OM" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="0" Desc="" LockedBy="" Name="Foundation Service Initialization Data" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBJ"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RU"/>
+        </AssociatedObject>
+        <StoredConfiguration>
+            <TextStore ObjRef="$A54470IJ.$AE0003H0"/>
+        </StoredConfiguration>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBJ" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OM"/>
+        </TypedProperties>
+    </PropertyType>
+    <TextStore TextType="" PublicType="" ChangeState="" Id="$A54470IJ.$AE0003H0" StoredText="" UsageVersion="0.0"
+               TextRole="initialization" Desc="" LockedBy="" Name="Initialization Data">
+        <AssociatedProperty>
+            <Property ObjRef="$A54470IJ.$AH0007OM"/>
+        </AssociatedProperty>
+    </TextStore>
+    <Property DefaultValue="com.sas.console.plugins.services.DefaultBIPServiceInitDataView" IsVisible="0" IsRequired="1"
+              PropertyName="ServiceInitializationDataView" ChangeState="" UseValueOnly="0" PropertyRole="" IsLinked="0"
+              IsExpert="0" Id="$A54470IJ.$AH0007ON" SQLType="12" UsageVersion="0.0" IsUpdateable="0" Desc="" LockedBy=""
+              Name="Initialization Data User Interface" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBK"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RU"/>
+        </AssociatedObject>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBK" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007ON"/>
+        </TypedProperties>
+    </PropertyType>
+    <ServiceComponent VendorIdentifier="SAS" PublicType="" SoftwareVersion="" ProductName="" Platform="Java"
+                      ChangeState="" IsRemotelyAccessible="0" Id="$A54470IJ.$B30000RV" ProductIdentifier=""
+                      ClassIdentifier="ABC1212121212" Major="9" Minor="2" UsageVersion="0.0" IsLicensed="0"
+                      SpecVendor="" SpecVersion=""
+                      Desc="A SAS Foundation Service which provides a capability to obtain authenticate user contexts."
+                      LockedBy="" FactoryClassName="com.sas.services.security.AuthenticationServiceFactory"
+                      InstallationLocation="" Name="Authentication Service" Vendor="SAS Institute">
+        <Trees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </Trees>
+        <UsedByComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </UsedByComponents>
+        <UsingComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+        </UsingComponents>
+        <ServiceTypes>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BJ"/>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BK"/>
+        </ServiceTypes>
+        <Properties>
+            <Property ObjRef="$A54470IJ.$AH0007OO"/>
+            <Property ObjRef="$A54470IJ.$AH0007OP"/>
+        </Properties>
+    </ServiceComponent>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BJ" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Provides support to authorize an identity." LockedBy=""
+                 InterfaceName="com.sas.services.security.AuthenticationServiceInterface"
+                 Name="Foundation service type: authentication">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+        </DeployedComponents>
+    </ServiceType>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BK" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Service interface common to all foundation services." LockedBy=""
+                 InterfaceName="com.sas.services.RemoteServiceInterface"
+                 Name="Foundation service type: base service interface">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+        </DeployedComponents>
+    </ServiceType>
+    <Property DefaultValue="" IsVisible="0" IsRequired="1" PropertyName="INIT_DATA" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OO" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="1" Desc="" LockedBy="" Name="Foundation Service Initialization Data" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBL"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+        </AssociatedObject>
+        <StoredConfiguration>
+            <TextStore ObjRef="$A54470IJ.$AE0003H1"/>
+        </StoredConfiguration>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBL" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OO"/>
+        </TypedProperties>
+    </PropertyType>
+    <TextStore TextType="" PublicType="" ChangeState="" Id="$A54470IJ.$AE0003H1"
+               StoredText="&lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt; &lt;!DOCTYPE AuthenticationService&gt;  &lt;AuthenticationService loginConfigAppName=&quot;PFS&quot; xmlns=&quot;urn:sas:AuthenticationService&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:sas:AuthenticationService com_sas_services_security_AuthenticationService_9_2_0_0.xsd&quot; /&gt;"
+               UsageVersion="0.0" TextRole="initialization" Desc="" LockedBy="" Name="Initialization Data">
+        <AssociatedProperty>
+            <Property ObjRef="$A54470IJ.$AH0007OO"/>
+        </AssociatedProperty>
+    </TextStore>
+    <Property DefaultValue="com.sas.console.plugins.services.security.ServiceConfigurationView" IsVisible="0"
+              IsRequired="1" PropertyName="ServiceInitializationDataView" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OP" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="0" Desc="" LockedBy="" Name="Initialization Data User Interface" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBM"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+        </AssociatedObject>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBM" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OP"/>
+        </TypedProperties>
+    </PropertyType>
+    <ServiceComponent VendorIdentifier="SAS" PublicType="" SoftwareVersion="" ProductName="" Platform="Java"
+                      ChangeState="" IsRemotelyAccessible="0" Id="$A54470IJ.$B30000RW" ProductIdentifier=""
+                      ClassIdentifier="ABC1212121212" Major="9" Minor="2" UsageVersion="0.0" IsLicensed="0"
+                      SpecVendor="" SpecVersion=""
+                      Desc="A SAS Foundation Service which provides a capability to query metadata from information repositories."
+                      LockedBy="" FactoryClassName="com.sas.services.information.InformationServiceFactory"
+                      InstallationLocation="" Name="Information Service" Vendor="SAS Institute">
+        <Trees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </Trees>
+        <UsedByComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </UsedByComponents>
+        <UsingComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+        </UsingComponents>
+        <ServiceTypes>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BL"/>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BM"/>
+        </ServiceTypes>
+        <Properties>
+            <Property ObjRef="$A54470IJ.$AH0007OQ"/>
+            <Property ObjRef="$A54470IJ.$AH0007OR"/>
+        </Properties>
+    </ServiceComponent>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BL" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Service interface common to all foundation services." LockedBy=""
+                 InterfaceName="com.sas.services.RemoteServiceInterface"
+                 Name="Foundation service type: base service interface">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+        </DeployedComponents>
+    </ServiceType>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BM" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Provides support to search for information across a federation of repositories." LockedBy=""
+                 InterfaceName="com.sas.services.information.InformationServiceInterface"
+                 Name="Foundation service type: information">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+        </DeployedComponents>
+    </ServiceType>
+    <Property DefaultValue="" IsVisible="1" IsRequired="1" PropertyName="INIT_DATA" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OQ" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="1" Desc="" LockedBy="" Name="Foundation Service Initialization Data" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBN"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+        </AssociatedObject>
+        <StoredConfiguration>
+            <TextStore ObjRef="$A54470IJ.$AE0003H2"/>
+        </StoredConfiguration>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBN" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OQ"/>
+        </TypedProperties>
+    </PropertyType>
+    <TextStore TextType="" PublicType="" ChangeState="" Id="$A54470IJ.$AE0003H2"
+               StoredText="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt; &lt;!DOCTYPE InformationService&gt; &lt;InformationService xmlns=&quot;urn:sas:InformationService&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:sas:InformationService com_sas_services_information_InformationService_9_2_0_0.xsd&quot; &gt; &lt;/InformationService&gt;"
+               UsageVersion="0.0" TextRole="initialization" Desc="" LockedBy="" Name="Initialization Data">
+        <AssociatedProperty>
+            <Property ObjRef="$A54470IJ.$AH0007OQ"/>
+        </AssociatedProperty>
+    </TextStore>
+    <Property DefaultValue="com.sas.console.plugins.services.information.ServiceInitializationDataView" IsVisible="0"
+              IsRequired="1" PropertyName="ServiceInitializationDataView" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OR" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="0" Desc="" LockedBy="" Name="Initialization Data User Interface" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBO"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+        </AssociatedObject>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBO" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OR"/>
+        </TypedProperties>
+    </PropertyType>
+    <ServiceComponent VendorIdentifier="SAS" PublicType="" SoftwareVersion="" ProductName="" Platform="Java"
+                      ChangeState="" IsRemotelyAccessible="0" Id="$A54470IJ.$B30000RX" ProductIdentifier=""
+                      ClassIdentifier="ABC1212121212" Major="9" Minor="2" UsageVersion="0.0" IsLicensed="0"
+                      SpecVendor="" SpecVersion=""
+                      Desc="A SAS Foundation Service which provides a capability to obtain user contexts." LockedBy=""
+                      FactoryClassName="com.sas.services.user.UserServiceFactory" InstallationLocation=""
+                      Name="User Service" Vendor="SAS Institute">
+        <Trees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </Trees>
+        <UsedByComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </UsedByComponents>
+        <UsingComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RW"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RV"/>
+        </UsingComponents>
+        <ServiceTypes>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BN"/>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BO"/>
+        </ServiceTypes>
+        <Properties>
+            <Property ObjRef="$A54470IJ.$AH0007OS"/>
+            <Property ObjRef="$A54470IJ.$AH0007OT"/>
+        </Properties>
+    </ServiceComponent>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BN" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Service interface common to all foundation services." LockedBy=""
+                 InterfaceName="com.sas.services.RemoteServiceInterface"
+                 Name="Foundation service type: base service interface">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </DeployedComponents>
+    </ServiceType>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BO" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Provides support to obtain user contexts." LockedBy=""
+                 InterfaceName="com.sas.services.user.UserServiceInterface" Name="Foundation service type: user">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </DeployedComponents>
+    </ServiceType>
+    <Property DefaultValue="" IsVisible="1" IsRequired="1" PropertyName="INIT_DATA" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OS" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="1" Desc="" LockedBy="" Name="Foundation Service Initialization Data" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBP"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </AssociatedObject>
+        <StoredConfiguration>
+            <TextStore ObjRef="$A54470IJ.$AE0003H3"/>
+        </StoredConfiguration>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBP" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OS"/>
+        </TypedProperties>
+    </PropertyType>
+    <TextStore TextType="" PublicType="" ChangeState="" Id="$A54470IJ.$AE0003H3"
+               StoredText="&lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt;                      &lt;!DOCTYPE UserService&gt; &lt;UserService xmlns=&quot;urn:sas:UserService&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:sas:UserService com_sas_services_user_UserService_9_2_0_0.xsd&quot; /&gt;"
+               UsageVersion="0.0" TextRole="initialization" Desc="" LockedBy="" Name="Initialization Data">
+        <AssociatedProperty>
+            <Property ObjRef="$A54470IJ.$AH0007OS"/>
+        </AssociatedProperty>
+    </TextStore>
+    <Property DefaultValue="com.sas.console.plugins.services.user.ServiceConfigurationView" IsVisible="0" IsRequired="1"
+              PropertyName="ServiceInitializationDataView" ChangeState="" UseValueOnly="0" PropertyRole="" IsLinked="0"
+              IsExpert="0" Id="$A54470IJ.$AH0007OT" SQLType="12" UsageVersion="0.0" IsUpdateable="0" Desc="" LockedBy=""
+              Name="Initialization Data User Interface" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBQ"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </AssociatedObject>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBQ" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OT"/>
+        </TypedProperties>
+    </PropertyType>
+    <ServiceComponent VendorIdentifier="SAS" PublicType="" SoftwareVersion="" ProductName="" Platform="Java"
+                      ChangeState="" IsRemotelyAccessible="0" Id="$A54470IJ.$B30000RY" ProductIdentifier=""
+                      ClassIdentifier="ABC1212121212" Major="9" Minor="2" UsageVersion="0.0" IsLicensed="0"
+                      SpecVendor="" SpecVersion=""
+                      Desc="A SAS Foundation Service which provides a capability to obtain session contexts."
+                      LockedBy="" FactoryClassName="com.sas.services.session.SessionServiceFactory"
+                      InstallationLocation="" Name="Session Service" Vendor="SAS Institute">
+        <Trees>
+            <Tree ObjRef="$A54470IJ.$AJ0002BR"/>
+        </Trees>
+        <UsingComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RT"/>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RX"/>
+        </UsingComponents>
+        <ServiceTypes>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BP"/>
+            <ServiceType ObjRef="$A54470IJ.$AS0002BQ"/>
+        </ServiceTypes>
+        <Properties>
+            <Property ObjRef="$A54470IJ.$AH0007OU"/>
+            <Property ObjRef="$A54470IJ.$AH0007OV"/>
+        </Properties>
+    </ServiceComponent>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BP" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Service interface common to all foundation services." LockedBy=""
+                 InterfaceName="com.sas.services.RemoteServiceInterface"
+                 Name="Foundation service type: base service interface">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </DeployedComponents>
+    </ServiceType>
+    <ServiceType ChangeState="" Id="$A54470IJ.$AS0002BQ" ClassIdentifier="ABC111" UsageVersion="0.0"
+                 Desc="Provides support to maintain session context data." LockedBy=""
+                 InterfaceName="com.sas.services.session.SessionServiceInterface"
+                 Name="Foundation service type: session">
+        <DeployedComponents>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </DeployedComponents>
+    </ServiceType>
+    <Property DefaultValue="" IsVisible="1" IsRequired="1" PropertyName="INIT_DATA" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OU" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="1" Desc="" LockedBy="" Name="Foundation Service Initialization Data" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBR"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </AssociatedObject>
+        <StoredConfiguration>
+            <TextStore ObjRef="$A54470IJ.$AE0003H4"/>
+        </StoredConfiguration>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBR" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OU"/>
+        </TypedProperties>
+    </PropertyType>
+    <TextStore TextType="" PublicType="" ChangeState="" Id="$A54470IJ.$AE0003H4"
+               StoredText="&lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt;                      &lt;!DOCTYPE SessionService&gt; &lt;SessionService xmlns=&quot;urn:sas:SessionService&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:sas:SessionService com_sas_services_session_SessionService_9_2_0_0.xsd&quot; /&gt;"
+               UsageVersion="0.0" TextRole="initialization" Desc="" LockedBy="" Name="Initialization Data">
+        <AssociatedProperty>
+            <Property ObjRef="$A54470IJ.$AH0007OU"/>
+        </AssociatedProperty>
+    </TextStore>
+    <Property DefaultValue="com.sas.console.plugins.services.session.ServiceConfigurationView" IsVisible="0"
+              IsRequired="1" PropertyName="ServiceInitializationDataView" ChangeState="" UseValueOnly="0"
+              PropertyRole="" IsLinked="0" IsExpert="0" Id="$A54470IJ.$AH0007OV" SQLType="12" UsageVersion="0.0"
+              IsUpdateable="0" Desc="" LockedBy="" Name="Initialization Data User Interface" Delimiter="">
+        <OwningType>
+            <PropertyType ObjRef="$A54470IJ.$A8000EBS"/>
+        </OwningType>
+        <AssociatedObject>
+            <ServiceComponent ObjRef="$A54470IJ.$B30000RY"/>
+        </AssociatedObject>
+    </Property>
+    <PropertyType ChangeState="" Id="$A54470IJ.$A8000EBS" SQLType="12" UsageVersion="0.0" Desc="" LockedBy=""
+                  Name="String">
+        <TypedProperties>
+            <Property ObjRef="$A54470IJ.$AH0007OV"/>
+        </TypedProperties>
+    </PropertyType>
+</Metadata>

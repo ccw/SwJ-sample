@@ -1,0 +1,1 @@
+javac -cp lib\sas.core.jar;lib\sas.intrnet.javatools.jar;lib\sas.svc.connection.jar;lib\sas.security.sspi.jar -d build -sourcepath src src\data\SasIom.java
